@@ -18,6 +18,10 @@ import 'package:formulae/screens/bsc/second_year/paper1/fy_sem_2_paper_1_chapter
 import 'package:formulae/screens/bsc/second_year/paper1/fy_sem_2_paper_1_chapter_3.dart';
 import 'package:formulae/screens/bsc/second_year/paper1/fy_sem_2_paper_1_chapter_4.dart';
 import 'package:formulae/screens/bsc/second_year/paper2/fy_sem_2_paper_2_chapter_1.dart';
+import 'package:formulae/screens/bsc/second_year/paper2/fy_sem_2_paper_2_chapter_2.dart';
+import 'package:formulae/screens/bsc/second_year/paper2/fy_sem_2_paper_2_chapter_3.dart';
+import 'package:formulae/screens/bsc/second_year/paper2/fy_sem_2_paper_2_chapter_4.dart';
+import 'package:formulae/screens/bsc/second_year/paper2/fy_sem_2_paper_2_chapter_5.dart';
 import 'package:formulae/screens/shared/custom_appbar.dart';
 import 'package:google_fonts/google_fonts.dart';
 // import 'package:math_expressions/math_expressions.dart';
@@ -133,6 +137,18 @@ class _FormulaeState extends State<Formulae> {
 
       case sem2Paper2Chaptr1:
         return FYSem2Paper2Chapter1();
+
+      case sem2Paper2Chaptr2:
+        return FYSem2Paper2Chapter2();
+
+      case sem2Paper2Chaptr3:
+        return FYSem2Paper2Chapter3();
+
+      case sem2Paper2Chaptr4:
+        return FYSem2Paper2Chapter4();
+
+      case sem2Paper2Chaptr5:
+        return FYSem2Paper2Chapter5();
 
       default:
     }

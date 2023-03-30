@@ -40,6 +40,7 @@ dependencies:
   # math_expressions: ^2.3.1
   flutter_tex: ^4.0.3+4
   flutter_windowmanager: ^0.2.0
+  fluttertoast: ^8.2.1
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +68,7 @@ flutter:
   assets:
     - assets/images/fx.png
     - assets/images/header.gif
+    - assets/images/cartoon2.png
     - assets/images/fy/sem1/paper1/fySem1P1C1.png
     - assets/images/fy/sem1/paper1/fySem1P1C3.png
     - assets/images/fy/sem1/paper1/fySem1P1C4.png
