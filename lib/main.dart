@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: RoutingNamesConstant.DASHBOARD_ROUTE,
+      initialRoute: RoutingNamesConstant.SPLASH_SCREEN_ROUTE,
       routes: routes,
     );
     // export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre/"

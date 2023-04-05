@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class FYSem1Paper1Chapter2 extends StatefulWidget {
+class FYSem1Paper1Chapter22 extends StatefulWidget {
   @override
-  State<FYSem1Paper1Chapter2> createState() => _FYSem1Paper1Chapter2();
+  State<FYSem1Paper1Chapter22> createState() => _FYSem1Paper1Chapter22();
 }
 
-class _FYSem1Paper1Chapter2 extends State<FYSem1Paper1Chapter2> {
+class _FYSem1Paper1Chapter22 extends State<FYSem1Paper1Chapter22> {
   @override
   Widget build(BuildContext context) {
     return Container(

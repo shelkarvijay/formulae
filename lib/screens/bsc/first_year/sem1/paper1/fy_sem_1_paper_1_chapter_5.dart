@@ -3,12 +3,12 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_tex/flutter_tex.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class FYSem1Paper1Chapter4 extends StatefulWidget {
+class FYSem1Paper1Chapter5 extends StatefulWidget {
   @override
-  State<FYSem1Paper1Chapter4> createState() => _FYSem1Paper1Chapter4();
+  State<FYSem1Paper1Chapter5> createState() => _FYSem1Paper1Chapter5();
 }
 
-class _FYSem1Paper1Chapter4 extends State<FYSem1Paper1Chapter4> {
+class _FYSem1Paper1Chapter5 extends State<FYSem1Paper1Chapter5> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,6 +42,14 @@ class _FYSem1Paper1Chapter4 extends State<FYSem1Paper1Chapter4> {
             getFifthFormula(),
             getSixthIndex("6."),
             getSixthFormula(),
+            getSeventhIndex("7."),
+            getSeventhFormula(),
+            getEightIndex("8."),
+            getEightFormula(),
+            getNineIndex("9."),
+            getNineFormula(),
+            getTenIndex("10."),
+            getTenFormula(),
             
           ]),
       ),
@@ -51,20 +59,34 @@ class _FYSem1Paper1Chapter4 extends State<FYSem1Paper1Chapter4> {
   getFirstFormula() {
     return TeXViewColumn(
       style: const TeXViewStyle(
-        border: TeXViewBorder.only(bottom: TeXViewBorderDecoration(borderWidth: 1, borderColor: Color.fromARGB(255, 80, 78, 78)))
+        // border: TeXViewBorder.only(bottom: TeXViewBorderDecoration(borderWidth: 1, borderColor: Color.fromARGB(255, 80, 78, 78)))
       ),
       children: [
-        TeXViewDocument(r"""<p>$$μ_r = {\sum_{\substack{n\\i=1}} X_i ^r \over n} &nbsp; &nbsp; &nbsp; &nbsp; for &nbsp; individual &nbsp; observations. $$ </p>""",
+        TeXViewDocument(r"""<p>$${Q_3-Q_2 = Q_2-Q_1}$$ </p>""",
           style: TeXViewStyle(
-            textAlign: TeXViewTextAlign.right,
+            padding: const TeXViewPadding.all(0),
+            // backgroundColor: Colors.yellow,
+            textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
             // contentColor: const Color.fromARGB(255, 221, 215, 215),
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<p>$$μ_r = {{\sum_{\substack{n\\i=1}}f_iX_i ^r}\over {\sum_{\substack{n\\i=1}}}f_i} &nbsp; &nbsp; &nbsp; &nbsp; for &nbsp; frequency &nbsp; distribution.. $$ </p>""",
+        TeXViewDocument(r"""<p>$${μ_1=μ_3=μ_5=........=0}$$ </p>""",
           style: TeXViewStyle(
-            textAlign: TeXViewTextAlign.right,
+            padding: const TeXViewPadding.all(0),
+            // backgroundColor: Colors.yellow,
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${Mean = Median = Mode}$$ </p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.all(0),
+            // backgroundColor: Colors.yellow,
+            textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
             // contentColor: const Color.fromARGB(255, 221, 215, 215),
             // elevation: 11
@@ -76,20 +98,24 @@ class _FYSem1Paper1Chapter4 extends State<FYSem1Paper1Chapter4> {
   getSecondFormula() {
     return TeXViewColumn(
       style: const TeXViewStyle(
-        border: TeXViewBorder.only(bottom: TeXViewBorderDecoration(borderWidth: 1, borderColor: Color.fromARGB(255, 80, 78, 78)))
+        // border: TeXViewBorder.only(bottom: TeXViewBorderDecoration(borderWidth: 1, borderColor: Color.fromARGB(255, 80, 78, 78)))
       ),
       children: [
-        TeXViewDocument(r"""<p>$$μ_r = {\sum_{\substack{n\\i=1}} (X_i - \bar X) ^r \over n} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for &nbsp; individual &nbsp; observations. $$ </p>""",
+        TeXViewDocument(r"""<p>$${Q_2-Q_1 < Q_3-Q_2}$$ </p>""",
           style: TeXViewStyle(
-            textAlign: TeXViewTextAlign.right,
+            padding: const TeXViewPadding.all(0),
+            // backgroundColor: Colors.yellow,
+            textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
             // contentColor: const Color.fromARGB(255, 221, 215, 215),
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<p>$$μ_r = {{\sum_{\substack{n\\i=1}}f_i(X_i - \bar X) ^r}\over {\sum_{\substack{n\\i=1}}}f_i} &nbsp; &nbsp; &nbsp; &nbsp; for &nbsp; frequency &nbsp; distribution.. $$ </p>""",
+        TeXViewDocument(r"""<p>$${Mode < Median < Mean}$$ </p>""",
           style: TeXViewStyle(
-            textAlign: TeXViewTextAlign.right,
+            padding: const TeXViewPadding.all(0),
+            // backgroundColor: Colors.yellow,
+            textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
             // contentColor: const Color.fromARGB(255, 221, 215, 215),
             // elevation: 11
@@ -101,37 +127,86 @@ class _FYSem1Paper1Chapter4 extends State<FYSem1Paper1Chapter4> {
   getThirdFormula() {
     return TeXViewColumn(
       style: const TeXViewStyle(
-        border: TeXViewBorder.only(bottom: TeXViewBorderDecoration(borderWidth: 1, borderColor: Color.fromARGB(255, 80, 78, 78)))
+        // border: TeXViewBorder.only(bottom: TeXViewBorderDecoration(borderWidth: 1, borderColor: Color.fromARGB(255, 80, 78, 78)))
       ),
       children: [
-        TeXViewDocument(r"""<p>$$μ_r(a) = {\sum_{\substack{n\\i=1}} (X_i - a) ^r \over n} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for &nbsp; individual &nbsp; observations. $$ </p>""",
+        TeXViewDocument(r"""<p>$${Q_2-Q_1 > Q_3-Q_2}$$ </p>""",
           style: TeXViewStyle(
-            textAlign: TeXViewTextAlign.right,
+            padding: const TeXViewPadding.all(0),
+            // backgroundColor: Colors.yellow,
+            textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
             // contentColor: const Color.fromARGB(255, 221, 215, 215),
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<p>$$μ_r(a) = {{\sum_{\substack{n\\i=1}}f_i(X_i - a) ^r}\over {\sum_{\substack{n\\i=1}}}f_i} &nbsp; &nbsp; &nbsp; &nbsp; for &nbsp; frequency &nbsp; distribution.. $$ </p>""",
+        TeXViewDocument(r"""<p>$${Mode > Median > Mean}$$ </p>""",
           style: TeXViewStyle(
-            textAlign: TeXViewTextAlign.right,
+            padding: const TeXViewPadding.all(0),
+            // backgroundColor: Colors.yellow,
+            textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
             // contentColor: const Color.fromARGB(255, 221, 215, 215),
             // elevation: 11
           )
         ),
+        const TeXViewImage.asset(
+          'assets/images/fy/sem1/paper1/fySem1P1C5F3.png',
+          )
       ]);
   }
 
   getFourthFormula() {
     return TeXViewColumn(
       style: const TeXViewStyle(
-        border: TeXViewBorder.only(bottom: TeXViewBorderDecoration(borderWidth: 1, borderColor: Color.fromARGB(255, 80, 78, 78)))
+        // border: TeXViewBorder.only(bottom: TeXViewBorderDecoration(borderWidth: 1, borderColor: Color.fromARGB(255, 80, 78, 78)))
       ),
       children: [
-        TeXViewDocument(r"""<p>$$If &nbsp; u = ax+b, &nbsp; then &nbsp; μ_r &nbsp; of &nbsp; u = a^r . μ_r &nbsp; of &nbsp;x$$ </p>""",
+        TeXViewDocument(r"""<p>$${S_k = {\bar X - Mode \over \sigma} \approx {3(\bar X - Median) \over \sigma}}$$ </p>""",
           style: TeXViewStyle(
-            textAlign: TeXViewTextAlign.right,
+            padding: const TeXViewPadding.all(0),
+            // backgroundColor: Colors.yellow,
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${S_k > 0 For Positively skewed distribution}$$ </p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.all(0),
+            // backgroundColor: Colors.yellow,
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${S_k = 0 &nbsp; For &nbsp; Symmetric &nbsp; distribution}$$ </p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.all(0),
+            // backgroundColor: Colors.yellow,
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${S_k < 0 &nbsp; For &nbsp; Negatively &nbsp; skewed &nbsp; distribution}$$ </p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.all(0),
+            // backgroundColor: Colors.yellow,
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${S_k &nbsp; is &nbsp; independent &nbsp; of &nbsp; change &nbsp; of &nbsp; origin &nbsp; and &nbsp; scale &nbsp; and &nbsp; is &nbsp; free &nbsp; from &nbsp; unit.}$$ </p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.all(0),
+            // backgroundColor: Colors.yellow,
+            textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
             // contentColor: const Color.fromARGB(255, 221, 215, 215),
             // elevation: 11
@@ -146,38 +221,14 @@ class _FYSem1Paper1Chapter4 extends State<FYSem1Paper1Chapter4> {
       style: const TeXViewStyle(
         textAlign: TeXViewTextAlign.left,
         padding: TeXViewPadding.all(0),
-        border: TeXViewBorder.only(bottom: TeXViewBorderDecoration(borderWidth: 1, borderColor: Color.fromARGB(255, 80, 78, 78)))
+        // border: TeXViewBorder.only(bottom: TeXViewBorderDecoration(borderWidth: 1, borderColor: Color.fromARGB(255, 80, 78, 78)))
       ),
       children: [
-        TeXViewDocument(r"""<p>$${μ_1 = 0}$$ </p>""",
+        TeXViewDocument(r"""<p>$${S_B = {Q_3-2Q_2Q_1 \over Q_3-Q_1}}$$</p>""",
           style: TeXViewStyle(
             padding: const TeXViewPadding.all(0),
             // backgroundColor: Colors.yellow,
             textAlign: TeXViewTextAlign.left,
-            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
-            // contentColor: const Color.fromARGB(255, 221, 215, 215),
-            // elevation: 11
-          )
-        ),
-        TeXViewDocument(r"""<p>$$μ_2 = μ_2-μ_1^2 $$ </p>""",
-          style: TeXViewStyle(
-            textAlign: TeXViewTextAlign.right,
-            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
-            // contentColor: const Color.fromARGB(255, 221, 215, 215),
-            // elevation: 11
-          )
-        ),
-        TeXViewDocument(r"""<p>$$μ_3 = μ_3-3μ_2μ_1+μ_1^3 $$ </p>""",
-          style: TeXViewStyle(
-            textAlign: TeXViewTextAlign.right,
-            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
-            // contentColor: const Color.fromARGB(255, 221, 215, 215),
-            // elevation: 11
-          )
-        ),
-        TeXViewDocument(r"""<p>$$μ_4 = μ_4-4μ_3μ_1+6μ_2μ_1^2-3μ_1^4 $$ </p>""",
-          style: TeXViewStyle(
-            textAlign: TeXViewTextAlign.right,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
             // contentColor: const Color.fromARGB(255, 221, 215, 215),
             // elevation: 11
@@ -190,10 +241,126 @@ class _FYSem1Paper1Chapter4 extends State<FYSem1Paper1Chapter4> {
   getSixthFormula() {
      return TeXViewColumn(
       style: const TeXViewStyle(
-        border: TeXViewBorder.only(bottom: TeXViewBorderDecoration(borderWidth: 1, borderColor: Color.fromARGB(255, 80, 78, 78)))
+        // border: TeXViewBorder.only(bottom: TeXViewBorderDecoration(borderWidth: 1, borderColor: Color.fromARGB(255, 80, 78, 78)))
       ),
       children: [
-        TeXViewDocument(r"""<p>$$μ_1 = mean, &nbsp; μ_2 = variance$$ </p>""",
+        TeXViewDocument(r"""<p>$${\gamma_1 = \sqrt{\beta_1}} &nbsp; , &nbsp; {\beta_1 = {μ_3^2 \over μ_2^3} }$$ </p>""",
+          style: TeXViewStyle(
+            textAlign: TeXViewTextAlign.right,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${\gamma_1 &nbsp; possesses &nbsp; sign &nbsp; of &nbsp; μ_3.}$$ </p>""",
+          style: TeXViewStyle(
+            textAlign: TeXViewTextAlign.right,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+      ]);
+  }
+
+  getSeventhFormula() {
+     return TeXViewColumn(
+      style: const TeXViewStyle(
+        // border: TeXViewBorder.only(bottom: TeXViewBorderDecoration(borderWidth: 1, borderColor: Color.fromARGB(255, 80, 78, 78)))
+      ),
+      children: [
+        TeXViewDocument(r"""<p>$${\gamma_2 = \beta_2 - 3} &nbsp; , &nbsp; {\beta_2 = {μ_4 \over μ_2}}$$ </p>""",
+          style: TeXViewStyle(
+            textAlign: TeXViewTextAlign.right,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${\gamma_2 < 0 &nbsp; If &nbsp; the &nbsp; distribution &nbsp; is &nbsp; Platykurtic.}$$ </p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.all(0),
+            // backgroundColor: Colors.yellow,
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${\gamma_2 = 0 &nbsp; If &nbsp; the &nbsp; distribution &nbsp; is &nbsp; Mesokurtic.}$$ </p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.all(0),
+            // backgroundColor: Colors.yellow,
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${\gamma_2 > 0 &nbsp; If &nbsp; the &nbsp; distribution &nbsp; is &nbsp; Leptokurtic.}$$ </p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.all(0),
+            // backgroundColor: Colors.yellow,
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${\gamma_2 &nbsp; and &nbsp; \beta_2 &nbsp; are &nbsp independent &nbsp of &nbsp change &nbsp of &nbsp origin &nbsp and &nbsp scale &nbsp and &nbsp are &nbsp free &nbsp from &nbsp unit.}$$ </p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.all(0),
+            // backgroundColor: Colors.yellow,
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+      ]);
+  }
+
+  getEightFormula() {
+     return TeXViewColumn(
+      style: const TeXViewStyle(
+        // border: TeXViewBorder.only(bottom: TeXViewBorderDecoration(borderWidth: 1, borderColor: Color.fromARGB(255, 80, 78, 78)))
+      ),
+      children: [
+        TeXViewDocument(r"""<p>$${K_u = {(Q_3 - Q_1)\over P_{90} - P_{10}}}$$ </p>""",
+          style: TeXViewStyle(
+            textAlign: TeXViewTextAlign.right,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+      ]);
+  }
+
+  getNineFormula() {
+     return TeXViewColumn(
+      style: const TeXViewStyle(
+        // border: TeXViewBorder.only(bottom: TeXViewBorderDecoration(borderWidth: 1, borderColor: Color.fromARGB(255, 80, 78, 78)))
+      ),
+      children: [
+        TeXViewDocument(r"""<p>$${(\displaystyle\sum a_i b_i)^2 \leq \displaystyle\sum a_i^2 X \displaystyle\sum b_i^2}$$ </p>""",
+          style: TeXViewStyle(
+            textAlign: TeXViewTextAlign.right,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+      ]);
+  }
+
+  getTenFormula() {
+     return TeXViewColumn(
+      style: const TeXViewStyle(
+        // border: TeXViewBorder.only(bottom: TeXViewBorderDecoration(borderWidth: 1, borderColor: Color.fromARGB(255, 80, 78, 78)))
+      ),
+      children: [
+        TeXViewDocument(r"""<p>$${\beta_2 \geq \beta_1 + 1}$$ </p>""",
           style: TeXViewStyle(
             textAlign: TeXViewTextAlign.right,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -207,7 +374,7 @@ class _FYSem1Paper1Chapter4 extends State<FYSem1Paper1Chapter4> {
   getFistIndex(String index) {
     return TeXViewContainer(
       // style: TeXViewStyle(backgroundColor: Colors.yellow),
-      child: TeXViewDocument(r"""<p>1. Row Moments</p>""",
+      child: TeXViewDocument(r"""<p>1. For Symmetric distribution</p>""",
         style: TeXViewStyle(
           padding: TeXViewPadding.only(top: 10),
           textAlign: TeXViewTextAlign.left,
@@ -222,7 +389,7 @@ class _FYSem1Paper1Chapter4 extends State<FYSem1Paper1Chapter4> {
       style: const TeXViewStyle(
         // margin: TeXViewMargin.only(top: 30)
       ),
-      child: TeXViewDocument(r"""<p>2. Central Moments</p>""",
+      child: TeXViewDocument(r"""<p>2. For Positively skewed distribution (Right Tail)</p>""",
         style: TeXViewStyle(
           textAlign: TeXViewTextAlign.left,
           fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -234,7 +401,7 @@ class _FYSem1Paper1Chapter4 extends State<FYSem1Paper1Chapter4> {
   getThirdIndex(String index) {
     return TeXViewContainer(
       // style: TeXViewStyle(backgroundColor: Colors.yellow),
-      child: TeXViewDocument(r"""<p>3. Moments about a</p>""",
+      child: TeXViewDocument(r"""<p>3. For Negatively skewed distribution (Left Tail)</p>""",
         style: TeXViewStyle(
           textAlign: TeXViewTextAlign.left,
           fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -246,7 +413,7 @@ class _FYSem1Paper1Chapter4 extends State<FYSem1Paper1Chapter4> {
   getFourthIndex(String index) {
     return TeXViewContainer(
       // style: TeXViewStyle(backgroundColor: Colors.yellow),
-      child: TeXViewDocument(r"""<p>4. </p>""",
+      child: TeXViewDocument(r"""<p>4. Karl Pearson’s coefficient of Skewness</p>""",
         style: TeXViewStyle(
           textAlign: TeXViewTextAlign.left,
           fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -258,7 +425,7 @@ class _FYSem1Paper1Chapter4 extends State<FYSem1Paper1Chapter4> {
   getFifthIndex(String index) {
     return TeXViewContainer(
       // style: TeXViewStyle(backgroundColor: Colors.yellow),
-      child: TeXViewDocument(r"""<p>5. Relation between Raw and Central Moments</p>""",
+      child: TeXViewDocument(r"""<p>5. Bowley’s Coefficient of Skewness</p>""",
         style: TeXViewStyle(
           textAlign: TeXViewTextAlign.left,
           fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -270,7 +437,7 @@ class _FYSem1Paper1Chapter4 extends State<FYSem1Paper1Chapter4> {
   getSixthIndex(String index) {
     return TeXViewContainer(
       // style: TeXViewStyle(backgroundColor: Colors.yellow),
-      child: TeXViewDocument(r"""<p>6. </p>""",
+      child: TeXViewDocument(r"""<p>6. Pearsonian Coefficient of Skewness</p>""",
         style: TeXViewStyle(
           textAlign: TeXViewTextAlign.left,
           fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -282,7 +449,7 @@ class _FYSem1Paper1Chapter4 extends State<FYSem1Paper1Chapter4> {
   getSeventhIndex(String index) {
     return TeXViewContainer(
       // style: TeXViewStyle(backgroundColor: Colors.yellow),
-      child: TeXViewDocument(r"""<p>7. </p>""",
+      child: TeXViewDocument(r"""<p>7. Measure of Kurtosis</p>""",
         style: TeXViewStyle(
           textAlign: TeXViewTextAlign.left,
           fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -294,7 +461,7 @@ class _FYSem1Paper1Chapter4 extends State<FYSem1Paper1Chapter4> {
   getEightIndex(String index) {
     return TeXViewContainer(
       // style: TeXViewStyle(backgroundColor: Colors.yellow),
-      child: TeXViewDocument(r"""<p>8. </p>""",
+      child: TeXViewDocument(r"""<p>8. Measure of Kurtosis for the data having open end classes</p>""",
         style: TeXViewStyle(
           textAlign: TeXViewTextAlign.left,
           fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -306,7 +473,7 @@ class _FYSem1Paper1Chapter4 extends State<FYSem1Paper1Chapter4> {
   getNineIndex(String index) {
     return TeXViewContainer(
       // style: TeXViewStyle(backgroundColor: Colors.yellow),
-      child: TeXViewDocument(r"""<p>9. </p>""",
+      child: TeXViewDocument(r"""<p>9. Cauchy-Schwartz’s inequalit</p>""",
         style: TeXViewStyle(
           textAlign: TeXViewTextAlign.left,
           fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),

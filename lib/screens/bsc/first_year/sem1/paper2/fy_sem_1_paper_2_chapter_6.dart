@@ -57,7 +57,16 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<p>$${Mean: &nbsp; E(X) = k}$$ </p>""",
+        TeXViewDocument(r"""<p>\(\bullet \) Mean:</p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.only(left: 40),
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${E(X) = k}$$ </p>""",
           style: TeXViewStyle(
             textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -65,7 +74,16 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<p>$${Variance: &nbsp; Var(X) = 0}$$ </p>""",
+        TeXViewDocument(r"""<p>\(\bullet \) Variance:</p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.only(left: 40),
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${Var(X) = 0}$$ </p>""",
           style: TeXViewStyle(
             textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -90,7 +108,16 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<p>$${Mean: &nbsp; E(X) = {n+1 \over 2}}$$ </p>""",
+        TeXViewDocument(r"""<p>\(\bullet \) Mean:</p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.only(left: 40),
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${E(X) = {n+1 \over 2}}$$ </p>""",
           style: TeXViewStyle(
             textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -98,7 +125,16 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<p>$${Variance: &nbsp; Var(X) = {n^2-1 \over 12}}$$ </p>""",
+        TeXViewDocument(r"""<p>\(\bullet \) Variance:</p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.only(left: 40),
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${Var(X) = {n^2-1 \over 12}}$$ </p>""",
           style: TeXViewStyle(
             textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -106,7 +142,16 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<p>$${Coefficient &nbsp; of &nbsp; Skewness: &nbsp; Y_1 = 0}$$ </p>""",
+        TeXViewDocument(r"""<p>\(\bullet \) Coefficient of Skewness:</p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.only(left: 40),
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${Y_1 = 0}$$ </p>""",
           style: TeXViewStyle(
             textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -114,7 +159,16 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<p>$${M.G.F.: &nbsp; M_x(t) = {e^t\over n}[{(1-e^{nt})\over (1-e^t)}]}$$ </p>""",
+        TeXViewDocument(r"""<p>\(\bullet \) M.G.F.:</p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.only(left: 40),
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${M_x(t) = {e^t\over n}[{(1-e^{nt})\over (1-e^t)}]}$$ </p>""",
           style: TeXViewStyle(
             textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -122,8 +176,10 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<p>$${Does &nbsp; not &nbsp; satisfy &nbsp; additive &nbsp; property.}$$ </p>""",
+        TeXViewDocument(r"""<p>\(\bullet \) Does not satisfy additive property. </p>""",
           style: TeXViewStyle(
+            margin: const TeXViewMargin.only(bottom: 10),
+            padding: const TeXViewPadding.only(left: 40),
             textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
             // contentColor: const Color.fromARGB(255, 221, 215, 215),
@@ -147,7 +203,16 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<p>$${Mean: &nbsp; E(X) = p}$$ </p>""",
+        TeXViewDocument(r"""<p>\(\bullet \) Mean:</p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.only(left: 40),
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${E(X) = p}$$ </p>""",
           style: TeXViewStyle(
             textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -155,7 +220,16 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<p>$${Variance: &nbsp; Var(X) = pq}$$ </p>""",
+        TeXViewDocument(r"""<p>\(\bullet \) Variance:</p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.only(left: 40),
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${Var(X) = pq}$$ </p>""",
           style: TeXViewStyle(
             textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -163,7 +237,16 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<p>$${M.G.F.: &nbsp; M_x(t) = (q+pe^t)}$$ </p>""",
+        TeXViewDocument(r"""<p>\(\bullet \) M.G.F.: &nbsp; </p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.only(left: 40),
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${M_x(t) = (q+pe^t)}$$ </p>""",
           style: TeXViewStyle(
             textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -197,7 +280,16 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<p>$${Mean: &nbsp; E(X) = np}$$ </p>""",
+        TeXViewDocument(r"""<p>\(\bullet \) Mean:</p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.only(left: 40),
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${E(X) = np}$$ </p>""",
           style: TeXViewStyle(
             textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -205,7 +297,16 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<p>$${Variance: &nbsp; Var(X) = npq}$$ </p>""",
+        TeXViewDocument(r"""<p>\(\bullet \) Variance:</p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.only(left: 40),
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${Var(X) = npq}$$ </p>""",
           style: TeXViewStyle(
             textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -213,7 +314,16 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<p>$${M.G.F.: &nbsp; M_x(t) = (q+pe^t)^n}$$ </p>""",
+        TeXViewDocument(r"""<p>\(\bullet \) M.G.F.: </p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.only(left: 40),
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${M_x(t) = (q+pe^t)^n}$$ </p>""",
           style: TeXViewStyle(
             textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -221,8 +331,9 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<p>$${Recurrence &nbsp; relation &nbsp; between &nbsp; probabilities &nbsp; P(X=x+1)=?}$$ </p>""",
+        TeXViewDocument(r"""<p>\(\bullet \) Recurrence relation between probabilities P(X=x+1)=??:</p>""",
           style: TeXViewStyle(
+            padding: const TeXViewPadding.only(left: 40),
             textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
             // contentColor: const Color.fromARGB(255, 221, 215, 215),
@@ -237,7 +348,16 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<p>$${Mode: &nbsp; M=[(n+1)p] &nbsp; &nbsp; if &nbsp; (n+1)p &nbsp; is &nbsp; not &nbsp; an &nbsp; integer}$$ </p>""",
+        TeXViewDocument(r"""<p>\(\bullet \) Mode:</p>""",
+          style: TeXViewStyle(
+            padding: const TeXViewPadding.only(left: 40),
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            // contentColor: const Color.fromARGB(255, 221, 215, 215),
+            // elevation: 11
+          )
+        ),
+        TeXViewDocument(r"""<p>$${M=[(n+1)p] &nbsp; &nbsp; if &nbsp; (n+1)p &nbsp; is &nbsp; not &nbsp; an &nbsp; integer}$$ </p>""",
           style: TeXViewStyle(
             textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
@@ -253,9 +373,10 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<h3>Recurrence relation between probabilities</h>""",
+        TeXViewDocument(r"""<p>\(\bullet \) Recurrence relation between probabilities:</p>""",
           style: TeXViewStyle(
-            textAlign: TeXViewTextAlign.center,
+            padding: const TeXViewPadding.only(left: 40),
+            textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
             // contentColor: const Color.fromARGB(255, 221, 215, 215),
             // elevation: 11
@@ -277,9 +398,10 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<h3>Coefficient of Skewness:</h>""",
+        TeXViewDocument(r"""<p>\(\bullet \) Coefficient of Skewness:</p>""",
           style: TeXViewStyle(
-            textAlign: TeXViewTextAlign.center,
+            padding: const TeXViewPadding.only(left: 40),
+            textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
             // contentColor: const Color.fromARGB(255, 221, 215, 215),
             // elevation: 11
@@ -293,9 +415,10 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<h3>Coefficient of Kurtosis:</h>""",
+        TeXViewDocument(r"""<p>\(\bullet \) Coefficient of Kurtosis:</p>""",
           style: TeXViewStyle(
-            textAlign: TeXViewTextAlign.center,
+            padding: const TeXViewPadding.only(left: 40),
+            textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
             // contentColor: const Color.fromARGB(255, 221, 215, 215),
             // elevation: 11
@@ -309,9 +432,10 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<h3>Satisfies additive property.</h>""",
+        TeXViewDocument(r"""<p>\(\bullet \) Satisfies additive property.</p>""",
           style: TeXViewStyle(
-            textAlign: TeXViewTextAlign.center,
+            padding: const TeXViewPadding.only(left: 40),
+            textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
             // contentColor: const Color.fromARGB(255, 221, 215, 215),
             // elevation: 11
@@ -333,18 +457,20 @@ class _FYSem1Paper2Chapter6 extends State<FYSem1Paper2Chapter6> {
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<h3>Conditional distribution of X given X+Y = n:</h>""",
+        TeXViewDocument(r"""<p>\(\bullet \) Conditional distribution of X given X+Y=n:</p>""",
           style: TeXViewStyle(
-            textAlign: TeXViewTextAlign.center,
+            padding: const TeXViewPadding.only(left: 40),
+            textAlign: TeXViewTextAlign.left,
             fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
             // contentColor: const Color.fromARGB(255, 221, 215, 215),
             // elevation: 11
           )
         ),
-        TeXViewDocument(r"""<p>$${If &nbsp; X &nbsp; Bin(n_1,p) &nbsp; and &nbsp; Y &nbsp; Bin(n_2, p), &nbsp; X &nbsp; and &nbsp; Y &nbsp; are &nbsp; independent, &nbsp; then &nbsp; X/X+Y = n &nbsp; follows &nbsp; Hypergeometric &nbsp; distribution &nbsp; with &nbsp; parameters &nbsp; N=n_1 + n_2 , M =n_1 \wedge n}$$</p>""",
+        TeXViewDocument(r"""<p>If X Bin(n_1,p) and Y Bin(n_2, p), X and Y are independent, then X/X+Y = n follows Hypergeometric distribution with parameters N=n_1 + n_2 , M =n_1 \( \land \) n</p>""",
           style: TeXViewStyle(
-            textAlign: TeXViewTextAlign.center,
-            fontStyle: TeXViewFontStyle(fontSize: 10, fontWeight: TeXViewFontWeight.bold),
+            padding: const TeXViewPadding.only(left: 50, top: 10, right: 50),
+            textAlign: TeXViewTextAlign.left,
+            fontStyle: TeXViewFontStyle(fontSize: 10),
             // contentColor: const Color.fromARGB(255, 221, 215, 215),
             // elevation: 11
           )

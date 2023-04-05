@@ -27,11 +27,11 @@ class _CustomAppbar extends State<CustomAppbar> {
       statusBarColor: Color.fromARGB(255, 26, 57, 85), //or set color with: Color(0xFF0000FF)
     ));
     return AppBar(
-      iconTheme: const IconThemeData(color: Color.fromARGB(255, 193, 198, 206)),
+      iconTheme: const IconThemeData(color: Color.fromARGB(255, 244, 245, 247)),
       title: Text(
         screenName,
         style: GoogleFonts.montserrat(
-          textStyle: TextStyle(fontSize: 26, color: screenName == 'Courses' ? Colors.white : Colors.black))
+          textStyle: TextStyle(fontSize: 26, color: screenName == 'Courses' ? const Color.fromARGB(255, 244, 245, 247) : Colors.black))
         // style: TextStyle(
         //     fontFamily: "Montserrat-Medium", fontSize: 26, letterSpacing: 2,
         //     color: screenName == 'Courses' ? Colors.white : Colors.black),

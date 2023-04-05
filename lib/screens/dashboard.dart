@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:formulae/constants.dart/routes.dart';
 import 'package:formulae/screens/courses.dart';
-import 'package:formulae/screens/shared/chapter_list.dart';
-import 'package:formulae/screens/shared/chapter_list_common.dart';
 import 'package:formulae/screens/shared/custom_appbar.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,9 +18,11 @@ class _DashboardState extends State<Dashboard> {
   Future<bool> onWillPop() {
     DateTime now = DateTime.now();
     if (currentBackPressTime == null ||
-        now.difference(currentBackPressTime) > Duration(seconds: 2)) {
+        now.difference(currentBackPressTime) > const Duration(seconds: 2)) {
       currentBackPressTime = now;
-      // Fluttertoast.showToast(msg: 'exit_warning');
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text(
+              'Press Back Button Again to Exit'))); //scaffold message, you can show Toast message too.
       return Future.value(false);
     }
     return Future.value(true);
@@ -35,35 +34,36 @@ class _DashboardState extends State<Dashboard> {
         child: WillPopScope(
             onWillPop: onWillPop,
             child: Scaffold(
-                // backgroundColor: Theme.of(context).canvasColor,
                 appBar: CustomAppbar(
                   screenName: '',
                   backgroundColorName: const Color.fromARGB(255, 38, 74, 107),
                   titleColor: Colors.white,
                 ),
-                drawer: Drawer(),
-                body: Container(
-                    height: MediaQuery.of(context).size.height,
-                    decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 38, 74, 107)),
-                    child: SingleChildScrollView(
-                        physics: const ScrollPhysics(),
+                drawer: const Drawer(),
+                body: SingleChildScrollView(
+                    physics: const ScrollPhysics(),
+                    child: Container(
+                        height: MediaQuery.of(context).size.height,
+                        decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(30),
+                                bottomRight: Radius.circular(30)),
+                            color: Color.fromARGB(255, 38, 74, 107)),
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Container(
-                                // color: Colors.black,
                                 padding:
                                     const EdgeInsets.only(left: 18, bottom: 5),
                                 child: Row(
                                   children: <Widget>[
                                     Text(
-                                      "Faculty",
+                                      "Science",
                                       style: GoogleFonts.montserrat(
                                           textStyle:
                                               const TextStyle(fontSize: 18),
                                           color: const Color.fromARGB(
-                                              255, 235, 238, 245)),
+                                              255, 244, 245, 247)),
                                       textAlign: TextAlign.left,
                                     ),
                                     const SizedBox(
@@ -77,11 +77,11 @@ class _DashboardState extends State<Dashboard> {
                                   ],
                                 ),
                               ),
-                              // SizedBox(height: 10,),
                               Container(
-                                  padding: EdgeInsets.only(left: 18, right: 18),
+                                  padding: const EdgeInsets.only(
+                                      left: 18, right: 18),
                                   height:
-                                      MediaQuery.of(context).size.height / 1.14,
+                                      MediaQuery.of(context).size.height / 1.10,
                                   // margin: const EdgeInsets.only(top: 75),
                                   decoration: const BoxDecoration(
                                       color: Colors.white,
@@ -94,7 +94,7 @@ class _DashboardState extends State<Dashboard> {
                                       child: GridView.count(
                                           crossAxisCount: 2,
                                           padding: const EdgeInsets.all(3.0),
-                                          childAspectRatio: 1.5,
+                                          childAspectRatio: 1.2,
                                           crossAxisSpacing: 20.0,
                                           mainAxisSpacing: 20.0,
                                           shrinkWrap: true,
@@ -138,20 +138,23 @@ class _DashboardState extends State<Dashboard> {
                                                   padding:
                                                       const EdgeInsets.all(20),
                                                   child: Column(
-                                                    mainAxisAlignment: MainAxisAlignment.center,
-                                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .center,
                                                     children: [
-                                                      Container(
-                                                        // decoration: BoxDecoration(color: Colors.red),
-                                                        child: Icon(
+                                                      Icon(
                                                         faculty[index].icon,
                                                         size: 30.0,
                                                         color: const Color
                                                                 .fromARGB(
                                                             255, 38, 74, 107),
                                                       ),
+                                                      const SizedBox(
+                                                        height: 15,
                                                       ),
-                                                      const SizedBox(height: 15,),
                                                       Text(
                                                         faculty[index].title,
                                                         style: GoogleFonts.getFont(
@@ -166,7 +169,7 @@ class _DashboardState extends State<Dashboard> {
                                                                         107),
                                                                 fontWeight:
                                                                     FontWeight
-                                                                        .bold)),
+                                                                        .w400)),
                                                       )
                                                     ],
                                                   ),
@@ -179,7 +182,7 @@ class _DashboardState extends State<Dashboard> {
 
   facultyHeader() {
     return Stack(children: <Widget>[
-      Container(
+      SizedBox(
           width: MediaQuery.of(context).size.width,
           child: Card(
             elevation: 4.0,
@@ -192,24 +195,26 @@ class _DashboardState extends State<Dashboard> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Container(
-                    width: 250,
-                    padding: const EdgeInsets.all(15),
-                    child: Flexible(
-                        child: Text(
-                            'Select a course you want to learn and enjoy the app.',
-                            style: GoogleFonts.getFont('Montserrat',
-                                textStyle: const TextStyle(
-                                    fontSize: 17,
-                                    color: Color.fromARGB(255, 244, 245, 247),
-                                    fontWeight: FontWeight.w300))
-
-                            // style: TextStyle(color: Colors.green, fontSize: 20,),
-                            )))
+                    width: 225,
+                    padding: const EdgeInsets.all(20),
+                    child: Flex(
+                      direction: Axis.horizontal,
+                      children: [
+                        Flexible(
+                            child: Text(
+                                'Select a class you want to learn and enjoy the app.',
+                                style: GoogleFonts.getFont('Montserrat',
+                                    textStyle: const TextStyle(
+                                        fontSize: 14,
+                                        color:
+                                            Color.fromARGB(255, 244, 245, 247),
+                                        fontWeight: FontWeight.w400))))
+                      ],
+                    ))
               ],
             ),
           )),
       Positioned(
-        // alignment: Alignment.topRight,
         right: 20.0,
         child: Image.asset(
           'assets/images/cartoon2.png',
@@ -223,19 +228,19 @@ class _DashboardState extends State<Dashboard> {
 
   getNavigationScreen(String selectedItem) {
     switch (selectedItem) {
-      // case "11th":
-      //   Get.to(const ChapterList(),
-      //       duration: const Duration(seconds: 0, milliseconds: 500),
-      //       transition: Transition.rightToLeft,
-      //       routeName: RoutingNamesConstant.CHAPTER_LIST);
-      //   break;
+      case "11th":
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Sorry! This feacture is not available for now'),
+          backgroundColor: Color.fromARGB(255, 77, 99, 117),
+        ));
+        break;
 
-      // case "12th":
-      //   Get.to(const ChapterList(),
-      //       duration: const Duration(seconds: 0, milliseconds: 500),
-      //       transition: Transition.rightToLeft,
-      //       routeName: RoutingNamesConstant.CHAPTER_LIST);
-      //   break;
+      case "12th":
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Sorry! This feacture is not available for now'),
+          backgroundColor: Color.fromARGB(255, 77, 99, 117),
+        ));
+        break;
 
       case "Bsc":
         Get.to(const Courses(),
@@ -244,12 +249,12 @@ class _DashboardState extends State<Dashboard> {
             routeName: RoutingNamesConstant.COURSES);
         break;
 
-      // case "Msc":
-      //   Get.to(const Courses(),
-      //       duration: const Duration(seconds: 0, milliseconds: 500),
-      //       transition: Transition.rightToLeft,
-      //       routeName: RoutingNamesConstant.COURSES);
-      //   break;
+      case "Msc":
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Sorry! This feacture is not available for now'),
+          backgroundColor: Color.fromARGB(255, 77, 99, 117),
+        ));
+        break;
 
       default:
     }
@@ -263,8 +268,8 @@ class FacultyModal {
 }
 
 const List<FacultyModal> faculty = <FacultyModal>[
-  FacultyModal(title: '11th', icon: Icons.home),
-  FacultyModal(title: '12th', icon: Icons.contacts),
+  FacultyModal(title: '11th', icon: Icons.grade),
+  FacultyModal(title: '12th', icon: Icons.emoji_events_sharp),
   FacultyModal(title: 'Bsc', icon: Icons.school),
-  FacultyModal(title: 'Msc', icon: Icons.phone)
+  FacultyModal(title: 'Msc', icon: Icons.school)
 ];

@@ -851,7 +851,7 @@ class _FYSem2Paper1Chapter4 extends State<FYSem2Paper1Chapter4> {
         child: TeXViewDocument(
             r"""<p>A. Aggregate expenditure method:</p>""",
             style: TeXViewStyle(
-                padding: const TeXViewPadding.only(left: 15),
+                padding: const TeXViewPadding.only(left: 15, top: 10),
                 textAlign: TeXViewTextAlign.left,
                 fontStyle: TeXViewFontStyle(
                   fontSize: 10,
@@ -865,7 +865,7 @@ class _FYSem2Paper1Chapter4 extends State<FYSem2Paper1Chapter4> {
         child: TeXViewDocument(
             r"""<p>B. Family budget method:</p>""",
             style: TeXViewStyle(
-                padding: const TeXViewPadding.only(left: 15),
+                padding: const TeXViewPadding.only(left: 15, top: 10),
                 textAlign: TeXViewTextAlign.left,
                 fontStyle: TeXViewFontStyle(
                   fontSize: 10,

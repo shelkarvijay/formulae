@@ -3,9 +3,9 @@
 const String sem1Paper1Chaptr1 = 'Presentation of Data';
 const String sem1Paper1Chaptr2 = 'Measures of Central Tendency';
 const String sem1Paper1Chaptr3 = 'Measure of Dispersion';
-const String sem1Paper1Chaptr4 = 'Presentation of Data';
-const String sem1Paper1Chaptr5 = 'Moments';
-const String sem1Paper1Chaptr6 = 'Skewness and Kurtosis';
+const String sem1Paper1Chaptr4 = 'Moments';
+const String sem1Paper1Chaptr5 = 'Skewness and Kurtosis';
+const String sem1Paper1Chaptr6 = 'Theory of Attributes';
 
 const String sem1Paper2Chaptr1 = 'Sample space and events';
 const String sem1Paper2Chaptr2 = 'Probability';
