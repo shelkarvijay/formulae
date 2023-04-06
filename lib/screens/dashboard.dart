@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:formulae/constants.dart/routes.dart';
 import 'package:formulae/screens/courses.dart';
 import 'package:formulae/screens/shared/custom_appbar.dart';
+import 'package:formulae/screens/shared/services/toast_service.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -13,6 +14,8 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+
+  ToastService toasterService = new ToastService();
   late DateTime currentBackPressTime;
 
   Future<bool> onWillPop() {
@@ -52,135 +55,49 @@ class _DashboardState extends State<Dashboard> {
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Container(
-                                padding:
-                                    const EdgeInsets.only(left: 18, bottom: 5),
-                                child: Row(
-                                  children: <Widget>[
-                                    Text(
-                                      "Science",
-                                      style: GoogleFonts.montserrat(
-                                          textStyle:
-                                              const TextStyle(fontSize: 18),
-                                          color: const Color.fromARGB(
-                                              255, 244, 245, 247)),
-                                      textAlign: TextAlign.left,
-                                    ),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    const Icon(
-                                      Icons.library_books,
-                                      size: 20,
-                                      color: Color.fromARGB(255, 235, 238, 245),
-                                    )
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                  padding: const EdgeInsets.only(
-                                      left: 18, right: 18),
-                                  height:
-                                      MediaQuery.of(context).size.height / 1.10,
-                                  // margin: const EdgeInsets.only(top: 75),
-                                  decoration: const BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(30),
-                                          topRight: Radius.circular(30))),
-                                  child: Column(children: [
-                                    facultyHeader(),
-                                    Expanded(
-                                      child: GridView.count(
-                                          crossAxisCount: 2,
-                                          padding: const EdgeInsets.all(3.0),
-                                          childAspectRatio: 1.2,
-                                          crossAxisSpacing: 20.0,
-                                          mainAxisSpacing: 20.0,
-                                          shrinkWrap: true,
-                                          children: List.generate(
-                                              faculty.length, (index) {
-                                            return InkWell(
-                                                onTap: (() =>
-                                                    getNavigationScreen(
-                                                        faculty[index].title)),
-                                                child: Container(
-                                                  // height: 250,
-                                                  width: MediaQuery.of(context)
-                                                          .size
-                                                          .width /
-                                                      2.3,
-                                                  decoration: BoxDecoration(
-                                                      color:
-                                                          const Color.fromARGB(
-                                                              255,
-                                                              252,
-                                                              252,
-                                                              252),
-                                                      border: Border.all(
-                                                          color: const Color
-                                                                  .fromARGB(255,
-                                                              192, 218, 241)),
-                                                      // ignore: prefer_const_literals_to_create_immutables
-                                                      boxShadow: [
-                                                        const BoxShadow(
-                                                          offset: Offset(2, 2),
-                                                          blurRadius: 12,
-                                                          color: Color.fromRGBO(
-                                                              0, 0, 0, 0.16),
-                                                        )
-                                                      ],
-                                                      borderRadius:
-                                                          const BorderRadius
-                                                                  .all(
-                                                              Radius.circular(
-                                                                  15))),
-                                                  padding:
-                                                      const EdgeInsets.all(20),
-                                                  child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Icon(
-                                                        faculty[index].icon,
-                                                        size: 30.0,
-                                                        color: const Color
-                                                                .fromARGB(
-                                                            255, 38, 74, 107),
-                                                      ),
-                                                      const SizedBox(
-                                                        height: 15,
-                                                      ),
-                                                      Text(
-                                                        faculty[index].title,
-                                                        style: GoogleFonts.getFont(
-                                                            'Montserrat',
-                                                            textStyle: const TextStyle(
-                                                                fontSize: 20,
-                                                                color: Color
-                                                                    .fromARGB(
-                                                                        255,
-                                                                        38,
-                                                                        74,
-                                                                        107),
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w400)),
-                                                      )
-                                                    ],
-                                                  ),
-                                                ));
-                                          })),
-                                    )
-                                  ]))
+                              getScreenHeader(),
+                              getMainContent()
                             ]))))));
   }
 
-  facultyHeader() {
+  Widget getScreenHeader() {
+    return Container(
+      padding: const EdgeInsets.only(left: 18, bottom: 5),
+      child: Row(
+        children: <Widget>[
+          Text(
+            "Science",
+            style: GoogleFonts.montserrat(
+                textStyle: const TextStyle(fontSize: 18),
+                color: const Color.fromARGB(255, 244, 245, 247)),
+            textAlign: TextAlign.left,
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+          const Icon(
+            Icons.library_books,
+            size: 20,
+            color: Color.fromARGB(255, 235, 238, 245),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget getMainContent() {
+    return Container(
+        padding: const EdgeInsets.only(left: 18, right: 18),
+        height: MediaQuery.of(context).size.height / 1.10,
+        // margin: const EdgeInsets.only(top: 75),
+        decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30), topRight: Radius.circular(30))),
+        child: Column(children: [facultyHeader(), getCourses()]));
+  }
+
+  Widget facultyHeader() {
     return Stack(children: <Widget>[
       SizedBox(
           width: MediaQuery.of(context).size.width,
@@ -226,20 +143,71 @@ class _DashboardState extends State<Dashboard> {
     ]);
   }
 
+  Widget getCourses() {
+    return Expanded(
+      child: GridView.count(
+          crossAxisCount: 2,
+          padding: const EdgeInsets.all(3.0),
+          childAspectRatio: 1.2,
+          crossAxisSpacing: 20.0,
+          mainAxisSpacing: 20.0,
+          shrinkWrap: true,
+          children: List.generate(faculty.length, (index) {
+            return InkWell(
+                onTap: (() => getNavigationScreen(faculty[index].title)),
+                child: Container(
+                  // height: 250,
+                  width: MediaQuery.of(context).size.width / 2.3,
+                  decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 252, 252, 252),
+                      border: Border.all(
+                          color: const Color.fromARGB(255, 192, 218, 241)),
+                      // ignore: prefer_const_literals_to_create_immutables
+                      boxShadow: [
+                        const BoxShadow(
+                          offset: Offset(2, 2),
+                          blurRadius: 12,
+                          color: Color.fromRGBO(0, 0, 0, 0.16),
+                        )
+                      ],
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(15))),
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Icon(
+                        faculty[index].icon,
+                        size: 30.0,
+                        color: const Color.fromARGB(255, 38, 74, 107),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Text(
+                        faculty[index].title,
+                        style: GoogleFonts.getFont('Montserrat',
+                            textStyle: const TextStyle(
+                                fontSize: 20,
+                                color: Color.fromARGB(255, 38, 74, 107),
+                                fontWeight: FontWeight.w400)),
+                      )
+                    ],
+                  ),
+                ));
+          })),
+    );
+  }
+
   getNavigationScreen(String selectedItem) {
     switch (selectedItem) {
       case "11th":
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text('Sorry! This feacture is not available for now'),
-          backgroundColor: Color.fromARGB(255, 77, 99, 117),
-        ));
+        toasterService.showToast('title', context);
         break;
 
       case "12th":
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text('Sorry! This feacture is not available for now'),
-          backgroundColor: Color.fromARGB(255, 77, 99, 117),
-        ));
+        toasterService.showToast('title', context);
         break;
 
       case "Bsc":
@@ -250,10 +218,7 @@ class _DashboardState extends State<Dashboard> {
         break;
 
       case "Msc":
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text('Sorry! This feacture is not available for now'),
-          backgroundColor: Color.fromARGB(255, 77, 99, 117),
-        ));
+        toasterService.showToast('title', context);
         break;
 
       default:

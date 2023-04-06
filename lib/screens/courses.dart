@@ -57,149 +57,130 @@ class _CoursesState extends State<Courses> {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Container(
-                          // color: Colors.black,
-                          padding: const EdgeInsets.only(left: 18, bottom: 5),
-                          child: Row(
-                            children: <Widget>[
-                              Text(
-                                "Courses",
-                                style: GoogleFonts.montserrat(
-                                    textStyle: const TextStyle(fontSize: 18),
-                                    color: const Color.fromARGB(
-                                        255, 235, 238, 245)),
-                                textAlign: TextAlign.left,
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              const Icon(
-                                Icons.library_books,
-                                size: 20,
-                                color: Color.fromARGB(255, 235, 238, 245),
-                              )
-                            ],
-                          ),
-                        ),
-                        // SizedBox(height: 10,),
-
-                        Container(
-                          height: MediaQuery.of(context).size.height / 1.10,
-                          // margin: const EdgeInsets.only(top: 75),
-                          decoration: const BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(30),
-                                  topRight: Radius.circular(30))),
-                          child: Column(
-                            // crossAxisCount: 1,
-                            // padding: const EdgeInsets.all(3.0),
-                            // childAspectRatio: 3,
-                            children: <Widget>[
-                              Container(
-                                  width: MediaQuery.of(context).size.width,
-                                  margin: const EdgeInsets.all(20),
-                                  padding: EdgeInsets.only(bottom: 10),
-                                  height: 200,
-                                  decoration: const BoxDecoration(
-                                      image: DecorationImage(
-                                          image: AssetImage(
-                                            'assets/images/openBook.jpg',
-                                          ),
-                                          fit: BoxFit.cover),
-                                      // gradient: RadialGradient(colors: [
-                                      //   Color.fromARGB(255, 38, 74, 107),
-                                      //   Color.fromARGB(255, 183, 219, 250),
-                                      //   // Color.fromARGB(255, 38, 74, 107)
-                                      // ], tileMode: TileMode.decal,
-                                      // radius: 2,),
-                                      // color: Color.fromARGB(255, 38, 74, 107),
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(20))),
-                                  // child: Expanded(
-                                      child: CarouselSlider(
-                                    options: CarouselOptions(
-                                      initialPage: 0, autoPlay: true,
-                                      // height: 100,
-                                      // padEnds: false,
-                                      viewportFraction: 1,
-                                    ),
-                                    items: thoughtList.map((i) {
-                                      return Builder(
-                                          builder: (BuildContext context) {
-                                        return Container(
-                                          // decoration: BoxDecoration(color: Colors.yellow),
-                                          padding: const EdgeInsets.only(
-                                              left: 30, top: 10, right: 30),
-                                          width:
-                                              MediaQuery.of(context).size.width,
-                                          margin: const EdgeInsets.symmetric(
-                                              horizontal: 5.0),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.end,
-                                            children: [
-                                              Text(
-                                                i.title,
-                                                textAlign: TextAlign.right,
-                                                style: GoogleFonts.getFont(
-                                                    'Montserrat',
-                                                    textStyle: const TextStyle(
-                                                        fontSize: 17,
-                                                        color: Color.fromARGB(
-                                                            255, 166, 18, 44),
-                                                        fontWeight:
-                                                            FontWeight.w500)),
-                                              ),
-                                              Text(
-                                                i.writter,
-                                                textAlign: TextAlign.right,
-                                                style: GoogleFonts.getFont(
-                                                    'Montserrat',
-                                                    textStyle: const TextStyle(
-                                                        fontSize: 14,
-                                                        color: Color.fromARGB(
-                                                            255, 166, 18, 44),
-                                                        fontStyle:
-                                                            FontStyle.italic,
-                                                        fontWeight:
-                                                            FontWeight.w400)),
-                                              ),
-                                            ],
-                                          ),
-                                        );
-                                      });
-                                    }).toList(),
-                                  )),
-                              Expanded(
-                                child: GridView.count(
-                                    crossAxisCount: 1,
-                                    padding: const EdgeInsets.all(3.0),
-                                    childAspectRatio: 3.8,
-                                    crossAxisSpacing: 20.0,
-                                    mainAxisSpacing: 20.0,
-                                    shrinkWrap: true,
-                                    children: List.generate(classRooms.length,
-                                        (index) {
-                                      return getClassRoomItem(
-                                          classRooms[index].title,
-                                          classRooms[index].icon, index);
-                                    })),
-                              )
-                            ],
-                          ),
-                        )
+                        getScreenHeader(),
+                        getMainContent()
                       ])))),
     ));
   }
 
-  getClassRoomItem(String title, IconData icon, int index) {
+  Widget getScreenHeader() {
+    return Container(
+      // color: Colors.black,
+      padding: const EdgeInsets.only(left: 18, bottom: 5),
+      child: Row(
+        children: <Widget>[
+          Text(
+            "Courses",
+            style: GoogleFonts.montserrat(
+                textStyle: const TextStyle(fontSize: 18),
+                color: const Color.fromARGB(255, 235, 238, 245)),
+            textAlign: TextAlign.left,
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+          const Icon(
+            Icons.library_books,
+            size: 20,
+            color: Color.fromARGB(255, 235, 238, 245),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget getMainContent() {
+    return Container(
+      height: MediaQuery.of(context).size.height / 1.10,
+      decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30), topRight: Radius.circular(30))),
+      child: Column(
+        children: <Widget>[getFacultyHeader(), getClasses()],
+      ),
+    );
+  }
+
+  Widget getFacultyHeader() {
+    return Container(
+        width: MediaQuery.of(context).size.width,
+        margin: const EdgeInsets.all(20),
+        padding: EdgeInsets.only(bottom: 10),
+        height: 200,
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage(
+                  'assets/images/openBook.jpg',
+                ),
+                fit: BoxFit.cover),
+            borderRadius: BorderRadius.all(Radius.circular(20))),
+        child: CarouselSlider(
+          options: CarouselOptions(
+            initialPage: 0, autoPlay: true,
+            // height: 100,
+            // padEnds: false,
+            viewportFraction: 1,
+          ),
+          items: thoughtList.map((i) {
+            return Builder(builder: (BuildContext context) {
+              return Container(
+                padding: const EdgeInsets.only(left: 30, top: 10, right: 30),
+                width: MediaQuery.of(context).size.width,
+                margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      i.title,
+                      textAlign: TextAlign.right,
+                      style: GoogleFonts.getFont('Montserrat',
+                          textStyle: const TextStyle(
+                              fontSize: 17,
+                              color: Color.fromARGB(255, 166, 18, 44),
+                              fontWeight: FontWeight.w500)),
+                    ),
+                    Text(
+                      i.writter,
+                      textAlign: TextAlign.right,
+                      style: GoogleFonts.getFont('Montserrat',
+                          textStyle: const TextStyle(
+                              fontSize: 14,
+                              color: Color.fromARGB(255, 166, 18, 44),
+                              fontStyle: FontStyle.italic,
+                              fontWeight: FontWeight.w400)),
+                    ),
+                  ],
+                ),
+              );
+            });
+          }).toList(),
+        ));
+  }
+
+  Widget getClasses() {
+    return Expanded(
+      child: GridView.count(
+          crossAxisCount: 1,
+          padding: const EdgeInsets.all(3.0),
+          childAspectRatio: 3,
+          crossAxisSpacing: 20.0,
+          mainAxisSpacing: 20.0,
+          shrinkWrap: true,
+          children: List.generate(classRooms.length, (index) {
+            return getClassRoomItem(
+                classRooms[index].title, classRooms[index].icon, index);
+          })),
+    );
+  }
+
+  Widget getClassRoomItem(String title, IconData icon, int index) {
     //  double lastBottomMargin = index == 2 ? 20.0 : 0.0;
     return Card(
         elevation: 4.0,
-        margin: EdgeInsets.only(left: 20, right: 20, bottom: index == 2 ? 20.0 : 0.0),
+        margin: EdgeInsets.only(
+            left: 20, right: 20, bottom: index == 2 ? 20.0 : 0.0),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(30))),
         color: const Color.fromARGB(255, 245, 250, 250),
